@@ -115,6 +115,7 @@ struct fbtft_ops {
  * @regwidth: LCD Controller Register width in bits
  * @buswidth: Display interface bus width in bits
  * @backlight: Backlight type.
+ * @backlight_initial_state: backlight state at power on (1 = on)
  * @fbtftops: FBTFT operations provided by driver or device (platform_data)
  * @bpp: Bits per pixel
  * @fps: Frames per second
@@ -133,6 +134,7 @@ struct fbtft_display {
 	unsigned regwidth;
 	unsigned buswidth;
 	unsigned backlight;
+	unsigned backlight_initial_state;
 	struct fbtft_ops fbtftops;
 	unsigned bpp;
 	unsigned fps;
