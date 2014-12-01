@@ -146,12 +146,6 @@ config FB_TFT_UC1701
 	help
 	  Generic Framebuffer support for UC1701
 
-config FB_TFT_TONTEK35
-        tristate "FB driver for the TonTec 3.5 LCD display"
-	depends on FB_TFT
-	help
-	  Custom Framebuffer support for TonTec 3.5 display
-
 config FB_TFT_UPD161704
 	tristate "FB driver for the uPD161704 LCD Controller"
 	depends on FB_TFT

@@ -312,14 +312,10 @@ void fbtft_register_backlight(struct fbtft_par *par)
 	bl_ops->get_brightness = fbtft_backlight_get_brightness;
 	bl_ops->update_status = fbtft_backlight_update_status;
 	bl_props.type = BACKLIGHT_RAW;
-	if (par->pdata->display.backlight_initial_state == 1)
-		bl_props.power = FB_BLANK_UNBLANK;
-	else {
-		/* Assume backlight is off, get polarity from current state of pin */
-		bl_props.power = FB_BLANK_POWERDOWN;
-		if (!gpio_get_value(par->gpio.led[0]))
-			bl_props.state |= BL_CORE_DRIVER1;
-	}
+	/* Assume backlight is off, get polarity from current state of pin */
+	bl_props.power = FB_BLANK_POWERDOWN;
+	if (!gpio_get_value(par->gpio.led[0]))
+		bl_props.state |= BL_CORE_DRIVER1;
 
 	bd = backlight_device_register(dev_driver_string(par->info->device),
 				par->info->device, par, bl_ops, &bl_props);

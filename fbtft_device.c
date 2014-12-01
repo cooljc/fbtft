@@ -941,27 +941,6 @@ static struct fbtft_device_display displays[] = {
 			}
 		}
 	}, {
-		.name = "tontec35",
-		.spi = &(struct spi_board_info) {
-			.modalias = "fb_tontec35",
-			.max_speed_hz = 125000000,
-			.mode = SPI_MODE_3,
-			.platform_data = &(struct fbtft_platform_data) {
-				.display = {
-					.buswidth = 8,
-					.backlight = 1,
-					.backlight_initial_state = 1,
-				},
-				.bgr = true,
-				.gpios = (const struct fbtft_gpio []) {
-					{ "reset", 15 },
-					{ "dc", 25 },
-					{ "led", 18 },
-					{},
-				},
-			}
-		}
-	}, {
 		.name = "upd161704",
 		.spi = &(struct spi_board_info) {
 			.modalias = "fb_upd161704",
