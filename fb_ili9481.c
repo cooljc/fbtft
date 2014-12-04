@@ -96,7 +96,6 @@ static int set_var(struct fbtft_par *par)
 }
 
 static struct fbtft_display display = {
-	.regwidth = 16,
 	.width = WIDTH,
 	.height = HEIGHT,
 	.init_sequence = default_init_sequence,
